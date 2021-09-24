@@ -492,11 +492,6 @@ input[type=range]::-webkit-slider-thumb {
   justify-content: space-between;
   min-width: 80px;  
 }
-iframe{
-  border: none;
-  height: 100vh;
-  width: 100vw;
-}
 .arrow{
   padding: 0;
   border: none;
@@ -509,6 +504,14 @@ iframe{
   height: 8px;
   width: 30px;
   border-radius: 0px;
+}
+.explore-section-picture-container{
+  position: relative;
+}
+.explore-slider{
+  position: absolute;
+  top: 90px;
+  left: 420px;
 }
 .arrow-left{
   background-image: url(assets/svg/left.svg);
