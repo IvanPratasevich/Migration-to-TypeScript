@@ -108,7 +108,7 @@ html {
 }
 .welcome-section {
   margin: 0 auto;
-  min-height: 750px;
+  min-height: 810px;
   background: #030303;
 }
 .container {
@@ -442,12 +442,82 @@ input[type=range]::-webkit-slider-thumb {
 }
 .welcome-wrapper {
   margin: 0 auto;
-  max-width: 1920px;
+  position: relative;
+  max-width: 1440px;
   min-height: 750px;
-  background-image: url(assets/images/background-welcome.jpg);
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(assets/images/welcome-slider/1.jpg);
   background-repeat: no-repeat;
-  background-size: 1215px 750px;
+  background-size: 1000px 750px;
   background-position: bottom right;
+}
+.welcome-pagination-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: -56px;
+  right: 0;
+  width: 600px;
+  background: #030303;
+  min-height: 120px;
+}
+.slide-pagination{
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+}
+.welcome-slide-num{
+  margin-left: 74px;
+  min-width: 76px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.active-slide{
+  background: #D2B183;
+}
+.carousel-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 180px;  
+  height: 16px;
+}
+.arrows-container{
+  display: flex;
+  margin-right: 74px;
+  justify-content: space-between;
+  min-width: 80px;  
+}
+.arrow{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 8px;
+  width: 30px;
+  border-radius: 0px;
+}
+.arrow-left{
+  background-image: url(assets/svg/left.svg);
+}
+.arrow-right{
+  background-image: url(assets/svg/right.svg);
+}
+.slide-num{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 40px;
+  color: #FFFFFF; 
 }
 .welcome-container {
   padding-left: 20px;
