@@ -583,7 +583,7 @@ input[type=range]::-webkit-slider-thumb {
   color: #CAAA7D;
 }
 .tickets-section {
-  background: #000000;
+  background: white;
 }
 .video-title{
   width: 100%;
@@ -599,7 +599,7 @@ input[type=range]::-webkit-slider-thumb {
   text-align: center;
   width: 175px;
   height: 50px;
-  background: #FFFFFF;
+  background: black;
   border-radius: 2px;
   font-family: Roboto;
   font-style: normal;
@@ -610,7 +610,7 @@ input[type=range]::-webkit-slider-thumb {
   line-height: 26px;
   text-align: center;
   letter-spacing: 2px;
-  color: #000000;
+  color: white;
 }
 .contacts-section {
   background-color: #FFFFFF;
@@ -702,7 +702,7 @@ input[type=range]::-webkit-slider-thumb {
   font-weight: 700;
   font-size: 28px;
   line-height: 33px;
-  color: #FFFFFF;
+  color: #000000;
 }
 .ticket-type {
   display: flex;
@@ -716,7 +716,7 @@ label {
   font-style: normal;
   font-weight: 300;
   font-size: 22px;
-  color: #ffffff;
+  color: black;
   cursor: pointer;
 }
 .radio:checked,
@@ -740,7 +740,7 @@ label {
   width: 17px;
   height: 17px;
   box-sizing: border-box;
-  border: 2px solid #ddd;
+  border: 2px solid black;
   border-radius: 50%;
 }
 .radio:checked+label:after,
@@ -748,7 +748,7 @@ label {
   content: '';
   width: 7px;
   height: 7px;
-  background: #FFFFFF;
+  background: black;
   position: absolute;
   top: 6px;
   left: 4px;
@@ -804,7 +804,7 @@ label {
   align-items: center;
   margin-bottom: 36px;
   height: 50px;
-  border: 3px solid #ffffff;
+  border: 3px solid black;
 }
 .amount-type {
   width: 150px;
@@ -816,7 +816,7 @@ label {
   font-weight: 300;
   font-size: 22px;
   line-height: 26px;
-  color: #FFFFFF;
+  color: black;
 }
 .amount-btn {
   transition: 1s;
@@ -829,7 +829,7 @@ label {
   line-height: 37px;
   padding-right: 10px;
   width: 38px;
-  color: #FFFFFF;
+  color: black;
   background-color: transparent;
   border: 0;
   outline: 0;
@@ -846,7 +846,7 @@ label {
   font-size: 22px;
   height: 25px;
   text-align: center;
-  color: #FFFFFF;
+  color: black;
   width: 56px;
 }
 .padding-minus {
@@ -868,7 +868,7 @@ input::-webkit-inner-spin-button {
   font-weight: 300;
   font-size: 22px;
   line-height: 26px;
-  color: #FFFFFF;
+  color: black;
 }
 .amount-second-item {
   box-sizing: border-box;
@@ -878,7 +878,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   margin-bottom: 23px;
   height: 50px;
-  border: 3px solid #ffffff;
+  border: 3px solid black;
 }
 .amount-total-summ {
   font-family: Roboto;
@@ -887,7 +887,7 @@ input::-webkit-inner-spin-button {
   font-size: 28px;
   line-height: 33px;
   letter-spacing: 1.65px;
-  color: #FFFFFF;
+  color: black;
   margin-bottom: 49px;
 }
 .shop-btn:active {
