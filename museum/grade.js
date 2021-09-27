@@ -1,4 +1,4 @@
-let grade = `Оценка - 153 балла 
+let grade = `Оценка - 156 балла 
 Отзыв по пунктам ТЗ:
 Не выполненные/не засчитанные пункты:
 1) кнопке "Book" в форме покупки билетов добавлен ripple-эффект. Демо: https://50projects50days.com/projects/button-ripple-effect/ 
