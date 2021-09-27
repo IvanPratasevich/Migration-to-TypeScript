@@ -1105,3 +1105,383 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .first-page {
   background: #333333;
 }
+.tickets-overlay{
+  display: none;
+  background-color: rgba(59, 67, 76, 0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: 1s;
+}
+.tickets-form{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: -300%;
+  top: 50%;
+  padding: 90px 235px;
+  max-width: 1440px;
+  background-color: white;
+  transition: 1s;
+  transform: translate(-50%, -50%);
+}
+.add-overlay{
+  display: block;
+}
+.form-animation{
+  left: 50%;
+}
+.form-block{
+  width: 400px;
+  height: 663px;
+  margin-right: 40px;
+}
+.card-block{
+  width: 530px;
+  max-height: 663px;
+  border: 1px solid #030303;
+  padding: 25px 29px;
+}
+.book-tickets{
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 55px;
+  text-transform: uppercase;
+
+  color: #9D8665;
+}
+.tour-to-louvre{
+  margin-top: 0px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+    margin-bottom: 60px;
+
+
+color: #710707;
+
+}
+
+.underline-title-form {
+  position: relative;
+}
+.underline-title-form::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  height: 3px;
+background: #740C11;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.time-container{
+  display: flex;
+  justify-content: space-between;
+}
+#date{
+width: 47%;
+}
+#time{
+width: 47%;
+}
+.form-input{
+  display: block;
+  all: unset;
+  height: 45px;
+  background: #FFFFFF;
+  border: 1px solid #030303;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+.form-input::-webkit-input-placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+.form-select{
+  appearance: none;
+  display: block;
+  all: unset;
+  height: 45px;
+  background: #FFFFFF;
+  border: 1px solid #030303;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+.form-input:focus {
+    outline: 2px solid #030303;
+      -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.select:focus {
+ 
+  padding-left: 0px;
+  outline: 2px solid #030303;
+}
+.option{
+  background-color: #ffffff;
+}
+.ticket-counter{
+  max-height: 135px;
+  max-width: 400px;
+  margin-top: 20px;
+    padding: 9px 15px;
+border: 1px solid #030303;
+}
+.ticket-counter-title{
+  color: #9D8665;
+  margin-bottom: 25px;
+}
+.ticket-counter-container{
+  display: flex;
+  justify-content: space-between;
+max-height: 110px;
+}
+.ticket-counter-block{
+  display: flex;
+  flex-direction: column;
+}
+.ticket-type{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+  margin-top: 0px;
+  margin-bottom: 22px;
+}
+.close{
+  position: absolute;
+  top: 29px;
+  right: 29px;
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+}
+.amount-btn-form  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  box-sizing: border-box;
+  width: 36px;
+  height: 25px;
+  color: white;
+  background-color: black;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.amount-item-form {
+  box-sizing: border-box;
+  width: 105px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.number-form{
+  all: unset;
+  font-family: Roboto;
+  font-style: normal;
+  height: 25px;
+  text-align: center;
+  color: black;
+  width: 46px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.plus-btn-form{
+  padding-right: 5px;
+}
+.second-btn-form{
+  margin-bottom: 0px;
+}
+.ticket-type2{
+  margin-bottom: 0px;
+}
+.tour-louvre{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #740C11;
+  margin-bottom: 10px;
+}
+.overview{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: #272727;
+  margin-bottom: 2px;
+}
+.overview-container{
+  display: flex;
+  flex-direction: column;
+}
+.booking{
+    padding-left: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;  
+}
+.booking-date{
+  margin-bottom: 5px;
+  background-image: url(assets/svg/date.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.booking-time{
+  margin-bottom: 5px;
+  background-image: url(assets/svg/time.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.booking-type{
+  margin-bottom: 22px;
+  background-image: url(assets/svg/check_circle_outline.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.total-summ-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 52px;
+}
+.total-summ-container-first-block{
+  display: flex;
+  justify-content: space-between;
+  height: 52px;
+}
+.total-summ-container-second-block{
+}
+.total-summ-container-first-block-column{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.ticket-basic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #A4A4A3;
+  background: black;
+  border-radius: 5px;
+    width: 32px;
+    height: 20px;
+    margin-bottom: 12px;
+}
+.ticket-senior{
+    width: 32px;
+    height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #A4A4A3;
+  background: black;
+  border-radius: 5px;
+}
+.basic-ticket-price{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+    margin-bottom: 5px;
+}
+.senior-ticket-price{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+}
+.total-summ-container-second-block-column{
+  display: flex;
+  flex-direction: column;
+}
+.total-summ-container-second-block{
+  display: flex;
+  flex-direction: column;
+  height: 52px; 
+}
+.summ{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+.total{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: #030303; 
+}
+iframe{
+  border: 0;
+}
