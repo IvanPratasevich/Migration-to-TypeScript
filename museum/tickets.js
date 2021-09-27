@@ -11,7 +11,7 @@ function addAnimation(){
 }
 function closeForm(){
   form[0].classList.remove("form-animation");
-  setTimeout(removeAnimation, 200);
+  setTimeout(removeAnimation, 900);
 }
 function removeAnimation(){
    overlay[0].classList.remove("add-overlay");
