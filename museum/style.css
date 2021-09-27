@@ -1106,7 +1106,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .first-page {
   background: #333333;
 }
-.tickets-overlay{
+.tickets-overlay {
   display: none;
   background-color: rgba(59, 67, 76, 0.9);
   position: fixed;
@@ -1116,45 +1116,47 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   bottom: 0;
   z-index: 9;
   transition: all 1.3s ease-in-out;
- 
 }
-.tickets-form-container{
-
-}
-.tickets-form{
+.tickets-form-container {}
+.tickets-form {
   display: flex;
   justify-content: space-between;
   position: fixed;
   left: -300%;
   top: 50%;
-  padding: 90px 205px;
+  padding: 90px 235px;
   max-width: 1440px;
   background-color: white;
   transform: translate(-50%, -50%);
   transition: left 1.3s ease-in-out;
   z-index: 10;
 }
-.add-overlay{
+.add-overlay {
   display: block;
   transition: all 1.3s ease-in-out;
 }
-.form-animation{
+.form-animation {
   left: 50%;
   transition: left 1.3s ease-in-out;
 }
-.form-block{
+.form-block {
   width: 400px;
   height: 663px;
   margin-right: 40px;
 }
-.card-block{
+.card-block {
+  position: relative;
   width: 530px;
   max-height: 663px;
   border: 1px solid #030303;
   padding: 25px 29px;
+  box-sizing: border-box;
+  background: url(assets/images/louvre-form.jpg);
+  background-repeat: no-repeat;
+  background-position: 349px 23px;
 }
-.book-tickets{
-  margin-top: 0px;
+.book-tickets {
+  margin-top: -5px;
   margin-bottom: 15px;
   font-family: Forum;
   font-style: normal;
@@ -1162,54 +1164,99 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   font-size: 50px;
   line-height: 55px;
   text-transform: uppercase;
-
   color: #9D8665;
 }
-.tour-to-louvre{
+.shop-btn-form {
+  position: absolute;
+  top: 590px;
+  left: 279px;
+  text-align: center;
+  width: 220px;
+  height: 45px;
+  background: #710707;
+  border-radius: 2px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  color: white;
+  transition: 1s;
+  cursor: pointer;
+}
+.shop-btn-form:hover {
+  background-color: #9d8665;
+  transition: 1s;
+}
+.tour-to-louvre {
   margin-top: 0px;
   font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-    margin-bottom: 60px;
-
-
-color: #710707;
-
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 71px;
+  color: #710707;
 }
-
+.underline-total-summ {
+  position: relative;
+}
+.underline-total-summ::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #740C11;
+}
+.underline-title-counter {
+  position: relative;
+}
+.underline-title-counter::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #740C11;
+}
 .underline-title-form {
   position: relative;
 }
 .underline-title-form::after {
   content: "";
   position: absolute;
-  bottom: -15px;
+  bottom: -11px;
   left: 0;
   right: 0;
   height: 3px;
-background: #740C11;
+  background: #740C11;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
-.time-container{
+.time-container {
   display: flex;
   justify-content: space-between;
 }
-#date{
-width: 47%;
+#date {
+  width: 47%;
 }
-#time{
-width: 47%;
+#time {
+  width: 47%;
 }
-.form-input{
+.form-input {
   display: block;
   all: unset;
   height: 45px;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #030303;
   font-family: Roboto;
@@ -1231,7 +1278,7 @@ width: 47%;
   align-items: center;
   color: #030303;
 }
-.form-select{
+.form-select {
   appearance: none;
   display: block;
   all: unset;
@@ -1256,40 +1303,41 @@ width: 47%;
   color: #030303;
 }
 .form-input:focus {
-    outline: 2px solid #030303;
-      -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  outline: 2px solid #030303;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .select:focus {
- 
   padding-left: 0px;
   outline: 2px solid #030303;
 }
-.option{
+.option {
   background-color: #ffffff;
 }
-.ticket-counter{
-  max-height: 135px;
+.ticket-counter {
+  max-height: 134px;
   max-width: 400px;
   margin-top: 20px;
-    padding: 9px 15px;
-border: 1px solid #030303;
+  padding: 9px 15px;
+  border: 1px solid #030303;
 }
-.ticket-counter-title{
+.ticket-counter-title {
   color: #9D8665;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 }
-.ticket-counter-container{
+.ticket-counter-container {
   display: flex;
   justify-content: space-between;
-max-height: 110px;
+  max-height: 110px;
+  width: 370px;
 }
-.ticket-counter-block{
+.ticket-counter-block {
   display: flex;
   flex-direction: column;
+  margin-top: -3px;
 }
-.ticket-type{
+.ticket-type {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -1299,7 +1347,7 @@ max-height: 110px;
   margin-top: 0px;
   margin-bottom: 22px;
 }
-.close{
+.close {
   position: absolute;
   top: 29px;
   right: 29px;
@@ -1307,7 +1355,7 @@ max-height: 110px;
   height: 27px;
   cursor: pointer;
 }
-.amount-btn-form  {
+.amount-btn-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1320,20 +1368,20 @@ max-height: 110px;
   box-sizing: border-box;
   width: 36px;
   height: 25px;
+  box-sizing: border-box;
   color: white;
   background-color: black;
   border: 0;
   outline: 0;
   cursor: pointer;
+  padding: 0;
 }
-.amount-btn-form:hover{
-
-}
-.mail-link{
+.amount-btn-form:hover {}
+.mail-link {
   transition: 1s;
   text-decoration: none;
 }
-.mail-link:hover{
+.mail-link:hover {
   color: #9D8665;
 }
 .amount-item-form {
@@ -1344,8 +1392,9 @@ max-height: 110px;
   justify-content: center;
   align-items: center;
   margin-bottom: 18px;
+  border: 1px solid black;
 }
-.number-form{
+.number-form {
   all: unset;
   font-family: Roboto;
   font-style: normal;
@@ -1353,19 +1402,15 @@ max-height: 110px;
   text-align: center;
   color: black;
   width: 46px;
-  border: 1px solid black;
   box-sizing: border-box;
 }
-.plus-btn-form{
-  padding-right: 5px;
-}
-.second-btn-form{
+.second-btn-form {
   margin-bottom: 0px;
 }
-.ticket-type2{
+.ticket-type2 {
   margin-bottom: 0px;
 }
-.tour-louvre{
+.tour-louvre {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -1374,7 +1419,7 @@ max-height: 110px;
   color: #740C11;
   margin-bottom: 10px;
 }
-.overview{
+.overview {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -1383,56 +1428,56 @@ max-height: 110px;
   color: #272727;
   margin-bottom: 2px;
 }
-.overview-container{
+.overview-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 4px;
 }
-.booking{
-    padding-left: 30px;
+.booking {
+  padding-left: 30px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
-  color: #030303;  
+  color: #030303;
 }
-.booking-date{
+.booking-date {
   margin-bottom: 5px;
   background-image: url(assets/svg/date.svg);
   background-position: left;
   background-repeat: no-repeat;
 }
-.booking-time{
+.booking-time {
   margin-bottom: 5px;
   background-image: url(assets/svg/time.svg);
   background-position: left;
   background-repeat: no-repeat;
 }
-.booking-type{
+.booking-type {
   margin-bottom: 22px;
   background-image: url(assets/svg/check_circle_outline.svg);
   background-position: left;
   background-repeat: no-repeat;
 }
-.total-summ-container{
+.total-summ-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 52px;
 }
-.total-summ-container-first-block{
+.total-summ-container-first-block {
   display: flex;
   justify-content: space-between;
   height: 52px;
 }
-.total-summ-container-second-block{
-}
-.total-summ-container-first-block-column{
+.total-summ-container-second-block {}
+.total-summ-container-first-block-column {
   display: flex;
   flex-direction: column;
   margin-right: 10px;
 }
-.ticket-basic{
+.ticket-basic {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1444,13 +1489,13 @@ max-height: 110px;
   color: #A4A4A3;
   background: black;
   border-radius: 5px;
-    width: 32px;
-    height: 20px;
-    margin-bottom: 12px;
+  width: 32px;
+  height: 20px;
+  margin-bottom: 12px;
 }
-.ticket-senior{
-    width: 32px;
-    height: 20px;
+.ticket-senior {
+  width: 32px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1463,43 +1508,43 @@ max-height: 110px;
   background: black;
   border-radius: 5px;
 }
-.basic-ticket-price{
+.basic-ticket-price {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
   line-height: 26px;
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
-.senior-ticket-price{
+.senior-ticket-price {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
   line-height: 26px;
 }
-.total-summ-container-second-block-column{
+.total-summ-container-second-block-column {
   display: flex;
   flex-direction: column;
 }
-.total-summ-container-second-block{
+.total-summ-container-second-block {
   display: flex;
   flex-direction: column;
-  height: 52px; 
+  height: 52px;
 }
-.summ{
+.summ {
   display: flex;
   justify-content: space-between;
-  margin-top: 35px;
+  margin-top: 25px;
 }
-.total{
+.total {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 37px;
-  color: #030303; 
+  color: #030303;
 }
-iframe{
+iframe {
   border: 0;
 }
