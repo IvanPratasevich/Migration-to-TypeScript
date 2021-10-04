@@ -262,7 +262,7 @@ html {
   font-size: 80px;
   line-height: 90px;
   letter-spacing: 5px;
-  width: 660px;
+  width: 100%;
 }
 .card-link {
   text-decoration: none;
@@ -537,6 +537,8 @@ input[type=range]::-webkit-slider-thumb {
   color: #000000;
 }
 .welcome-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
   position: relative;
   max-width: 1440px;
@@ -1547,4 +1549,271 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 iframe {
   border: 0;
+}
+@media (max-width: 1024px) {
+  .navigation__menu{
+    display: none;
+  }
+  .welcome-wrapper{
+    background-size: 700px 525px;
+
+    background-position:
+    calc(100% - 20px) 
+    calc(100% - 0px) 
+  }
+  .header{
+    height: 130px;
+  }
+  .section-title{
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 0px;
+  }
+  .title_castle-to-museum{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    text-transform: none;
+  }
+  .welcome-text{
+    padding-top: 50px;
+  }
+  .welcome-section{
+    min-height: 585px;
+  }
+  .welcome-wrapper{
+    min-height: 525px;
+  }
+  .btn-discover{
+    width: 300px;
+    height: 60px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 52px;
+  }
+  .welcome-pagination-container{
+    width: 700px;
+    height: 120px;
+  }
+  .welcome-slide-num{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    color: #FFFFFF;
+  }
+  .carousel-pagination{
+    min-width: 160px;
+  }
+  .slide-pagination{
+    width: 12px;
+    height: 12px;
+  }
+  .welcome-slide-num{
+    margin-left: 204px;
+    min-width: 71px;
+  }
+  .slide-num {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    color: #FFFFFF;
+  }
+  .arrows-container{
+    margin-right: 94px;
+    margin-left: 2px;
+  }
+  .cards-container{
+    justify-content: space-evenly;
+     gap: 62px 0px;
+  }
+  .card img{
+    max-width: 330px;
+    max-height: 215px;
+  }
+  .visiting-title_color-margin{
+    color: #9D8665;
+    padding-top: 52px;
+    margin-bottom: 76px;
+  }
+  .underline-title::after{
+    bottom: -16px;
+  }
+  .card-title{
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 31px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .card-second-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+  }
+  .card-third-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  }
+  .card-underline-title::after{
+    bottom: -14px;
+    width: 150px;
+  }
+  .cards-container{
+    padding-bottom: 62px;
+  }
+  .explore-title{
+    padding-top: 53px;
+  }
+  #hide-text{
+    display: none;
+  }
+  .picture-text{
+     font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 38px;
+    color: #FFFFFF;
+  }
+  .container-picture{
+    width: 100%;
+  }
+  #explore-br{
+    display: none;
+  }
+  .container-picture__text{
+    margin-top: 75px;
+  }
+  .text_padding{
+    margin-top: -27px;
+  }
+  .las-meninas{
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  .explore-section-container{
+    justify-content: center;
+    padding-bottom: 55px;
+  }
+  .explore-slider{
+    height: 700px;
+    top: 40px;
+  }
+  .video-section-text{
+    display: none;
+  }
+ .video-section_text{
+  color: #9D8665;
+  padding-top: 0px;
+ }
+ .video-section__text{
+  color: #9D8665;
+  padding-top: 52px;
+ }
+ .video-container{
+  padding-top: 33px;
+  height: 504px;
+  min-height: 0px;
+  margin-bottom: 38px;
+ }
+ .video-container__background{
+    background-size: cover;
+    min-height: 444px;
+ }
+ .play-button{
+  height: 152px;
+  width: 152px;
+  background-size: cover;
+ }
+ .player-container{
+  height: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
+ }
+.play-button2{
+  width: 23px;
+  height: 30px;
+}
+#vid{
+  width: 560px !important;
+}
+.volume{
+  width: 145px;
+}
+.volume-control-container{
+  width: 250px;
+  height: 30px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]{
+  height: 5px;
+}
+.volume-btn{
+   width: 26px;
+   height: 20px;
+   background-size: cover;
+}
+.full-btn{
+  width: 26px;
+  height: 26px;
+  background-size: cover;
+}
+iframe{
+  width: 300px !important;
+  height: 170px !important;
+}
+.video-section{
+  padding-bottom: 61px;
+}
+.video-slider{
+  margin-top: 38px;
+}
+
+
 }
