@@ -1951,9 +1951,6 @@ iframe {
   }
 }
 @media (max-width: 768px) {
-  .amount-container {
-    display: none;
-  }
   .map {
     width: 300px;
   }
@@ -2131,8 +2128,53 @@ iframe {
 .video-section{
   padding-bottom: 80px;
 }
+.picture-inner-container{
+  height: 4000px;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+.gallery-img {
+  max-width: 352px;
+}
+.gallery-title{
+  padding-bottom: 40px;
+}
+.picture-container {
+  height: 1220px;
+}
+.img-painting{
+  width: 444px;
+  height: 340px;
+}
+.tickets-container {
+  margin-top: 63px;
+  padding-bottom: 59px;
+}
+.video-title{
 
-
+}
+.amount-container {
+  margin-right: 49px;
+}
+.amount-item {
+  width: 175px;
+  height: 50px;
+}
+.first-amount-type {
+    margin-top: 5px;
+}
+.amount-second-item {
+    margin-bottom: 37px;
+    margin-top: -2px;
+}
+.amount-total-summ {
+    margin-bottom: 40px;
+    width: 100%;
+}
+.tickets-container {
+  margin-top: 63px;
+  padding-bottom: 40px;
+}
 
 }
 @media (max-width: 1440px) {
