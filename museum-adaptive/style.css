@@ -2292,6 +2292,114 @@ line-height: 22px;
 
 
 }
+@media (max-width: 420px) {
+  .header{
+    height: 90px;
+  }
+  .logo-text{
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 5px; 
+  }
+  .logo-icon{
+    width: 29px;
+    height: 19px;
+  }
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 25px;
+  }
+.welcome-title {
+ font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+  margin-top: 4px;
+}
+.title_castle-to-museum {
+   font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2px;
+}
+.welcome-wrapper {
+    min-height: 464px;
+    background-repeat: no-repeat;
+    background-size: 380px 285px;
+    background-image: url(assets/images/welcome-slider/1.webp);
+}
+.welcome-pagination-container {
+    width: 552px;
+    height: 80px;
+    bottom: -80px;
+    left: -111px;
+    min-height: 80px;
+}
+.slide-num{
+  font-size: 16px;
+line-height: 40px;
+}
+.slide-pagination {
+   width: 7px;
+height: 7px;
+}
+.welcome-slide-num {
+    margin-left: 204px;
+    min-width: 55px;
+}
+
+.carousel-pagination {
+    min-width: 75px;
+}
+
+.arrow{
+  width: 20px;
+  height: 8px;
+}
+.welcome-section {
+    min-height: 541px;
+}
+
+.visiting-title_color-margin {
+    font-size: 28px;
+  line-height: 40px;
+    letter-spacing: 5px;
+    padding-top: 42px;
+    padding-bottom: 8px;
+}
+.card-title {
+  font-size: 18px;
+line-height: 20px;
+letter-spacing: 5px;
+}
+.cards-container {
+   
+    gap: 40px 0px;
+    padding-bottom: 30px;
+}
+.card-second-title {
+ font-weight: 200;
+font-size: 16px;
+line-height: 19px;
+}
+.card-third-title {
+  font-weight: 200;
+font-size: 16px;
+line-height: 19px;
+}
+
+
+
+
+
+
+
+}
+
+
+
 @media (max-width: 1440px) {
   .ticket-type {
     display: none;
