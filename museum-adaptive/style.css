@@ -410,7 +410,7 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(assets/images/video-background.jpg);
+  background-image: url(assets/images/video-background.webp);
   background-position: center;
   background-repeat: no-repeat;
   min-height: 650px;
@@ -543,7 +543,7 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   max-width: 1440px;
   min-height: 750px;
-  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(assets/images/welcome-slider/1.jpg);
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(assets/images/welcome-slider/1.webp);
   background-repeat: no-repeat;
   background-size: 1000px 750px;
   background-position: bottom right;
@@ -664,7 +664,7 @@ input[type=range]::-webkit-slider-thumb {
   transition: 1s;
 }
 .parallax {
-  background: url(assets/images/parallax.jpg);
+  background: url(assets/images/parallax.webp);
   height: 400px;
   width: 100%;
   background-size: cover;
@@ -1155,7 +1155,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border: 1px solid #030303;
   padding: 25px 29px;
   box-sizing: border-box;
-  background: url(assets/images/louvre-form.jpg);
+  background: url(assets/images/louvre-form.webp);
   background-repeat: no-repeat;
   background-position: 349px 23px;
 }
@@ -1552,6 +1552,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 iframe {
   border: 0;
 }
+.burger-menu{
+  display: none;
+}
 @media (max-width: 1024px) {
   .navigation__menu {
     display: none;
@@ -1850,6 +1853,7 @@ iframe {
   }
   .tickets-container {
     margin-top: 76px;
+    padding-bottom: 59px;
   }
   .amount-container {
     margin-right: 28px;
@@ -1876,13 +1880,191 @@ iframe {
   }
   .second-amount-type {
     margin-top: 30px;
-    margin-bottom: 7px;
+    margin-bottom: 11px;
   }
   .amount-total-summ {
     display: flex;
     justify-content: space-between;
     margin-top: 2px;
+    margin-bottom: 70px;
     width: 100%;
+  }
+  .first-amount-type{
+    margin-top: -5px;
+  }
+  .padding-minus {
+  }
+  .padding-plus {
+    padding-left: 22px;
+   }
+  .number{
+    display: flex;
+    justify-content: center;
+  }
+  .map{
+    width: 694px;
+    height: 454px;
+    margin-top: 75px;
+  }
+  .contacts-text_big{
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .contacts-text_small{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 15px;
+  }
+  .contacts-text{
+    margin-top: 75px;
+  }
+  .contacts-padding-top {
+    padding-top: 35px;
+}
+.contacts-container {
+    padding-bottom: 62px;
+}
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 54px;
+  padding-bottom: 80px;
+}
+.footer-logo{
+  margin-left: 2px;
+}
+.footer__menu {
+  min-width: 308px;
+}
+.footer-social{
+  margin-bottom: 10px;
+}
+.footer-line{
+  top: 243px;
+}
+ .burger-menu{
+  display: block;
+  cursor: pointer;
+}   
+}
+@media (max-width: 768px) {
+  iframe{
+    display: none;
+  }
+  .amount-container {
+    display: none;
+  }
+  .map{
+    width: 300px;
+  }
+  .footer-social {
+    display: none;
+  }
+
+
+
+  .btn-discover{
+    display: none;
+  }
+  .welcome-section{
+    min-height: 866px;
+  }
+  .header{
+    height: 110px;
+    align-items: flex-start;
+  }
+.header-container{
+  margin-top: 43px;
+  height: 41px;
+}
+.welcome-wrapper {
+  min-height: 765px;
+  background-repeat: no-repeat;
+  background-size: 728px 546px;
+  background-image: url(assets/images/welcome-slider/1.webp);
+}
+.welcome-text {
+   text-align: center;
+   padding-top: 7px;
+}
+.welcome-title {
+ font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.title_castle-to-museum{
+  font-weight: 300;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: 2px;
+}
+.welcome-pagination-container {
+    width: 700px;
+    height: 100px;
+    bottom: -101px;
+    left: -20px;
+    min-height: 100px;
+}
+.visiting-title_color-margin{
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 5px;
+  padding-top: 39px;
+  padding-bottom: 8px;
+}
+.card img {
+    max-width: 280px;
+    max-height: 180px;
+}
+.cards-container {
+  margin-top: -20px;
+    gap: 40px 0px;
+    padding-bottom: 81px;
+}
+.card-title {
+  font-size: 22px;
+line-height: 24px;
+letter-spacing: 3px;
+  }
+.card-second-title{
+ font-weight: 200;
+font-size: 18px;
+line-height: 21px;
+}
+.card-third-title {
+  font-weight: 200;
+font-size: 16px;
+line-height: 19px;
+}
+.explore-title{
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 5px;
+  padding-top: 40px;
+  padding-bottom: 7px;
+}
+.container-picture__text{
+  display: none;
+}
+.las-meninas{
+  width: 728px;
+  height: 705px;
+  padding-top: 55px;
+}
+.explore-slider{
+  top: 56px;
+  height: 705px;
+}
+.explore-section-container{
+  padding-bottom: 37px;
+}
+.video-section_text{
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   }
 }
 @media (max-width: 1440px) {
