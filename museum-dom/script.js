@@ -1,3 +1,24 @@
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  pagination: {
+    el: '.carousel-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.arrow-right',
+    prevEl: '.arrow-left',
+  },
+
+  // And if we need scrollbar
+});
+
+
+
+
+
+
 const progress = document.querySelector('.vid');
 const volume = document.querySelector('.volume');
 

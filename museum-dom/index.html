@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUSEUM</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+  />
   <link class="favicon" href="assets/favicon.ico" rel="icon">
   <link href="style.css" rel="stylesheet" type="text/css">
   <link href="normalize.css" rel="stylesheet" type="text/css">
@@ -52,7 +54,15 @@
     </div>
   </header>
   <main>
+        <!-- 
+Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
+Cпасибо ^ↀᴥↀ^
+  -->
     <section class="welcome-section">
+    <!-- 
+Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
+Cпасибо ^ↀᴥↀ^
+  -->
       <div class="welcome-wrapper">
         <div class="welcome-container">
           <div class="welcome-text">
@@ -61,22 +71,53 @@
             <p class="section-title title_castle-to-museum">From the castle to the museum</p>
           </div><a class="btn-discover btn-discover_link" href="tours/tour7.html" target="_blank">Discover the Louvre</a>
         </div>
-        <div class="welcome-pagination-container">
+    <!-- 
+Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
+Cпасибо ^ↀᴥↀ^
+  -->
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="slider-img">
+                <img src="assets/images/welcome-slider/1.webp"> 
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-img">
+                <img src="assets/images/welcome-slider/2.webp"> 
+              </div>
+            </div>
+          <div class="swiper-slide">
+              <div class="slider-img">
+                <img src="assets/images/welcome-slider/3.webp"> 
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-img">
+                <img src="assets/images/welcome-slider/4.webp"> 
+              </div>
+            </div>
+          <div class="swiper-slide">
+              <div class="slider-img">
+                <img src="assets/images/welcome-slider/5.webp"> 
+              </div>
+            </div>
+          </div>
+        <div class="welcome-pagination-container swiper-pagination">
           <div class="welcome-slide-num">
             <span class="slide-num">01</span> <span class="slide-num">|</span> <span class="slide-num">05</span>
           </div>
           <div class="carousel-pagination">
-            <div class="slide-pagination active-slide"></div>
-            <div class="slide-pagination"></div>
-            <div class="slide-pagination"></div>
-            <div class="slide-pagination"></div>
-            <div class="slide-pagination"></div>
           </div>
           <div class="arrows-container">
             <button class="arrow arrow-left"></button>
             <button class="arrow arrow-right"></button>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <section class="visiting-section" id="visiting">
@@ -441,6 +482,7 @@
       Pratasevich</a>
     </div>
   </footer>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="script.js">
   </script>
   <script src="gallery.js">
