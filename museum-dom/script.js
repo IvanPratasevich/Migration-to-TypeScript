@@ -54,8 +54,15 @@ const swiper2 = new Swiper('.swiper2', {
 swiper.on('slideChange', function () {
         activeSlideNum.innerHTML = '0' + (swiper.realIndex + 1);
 });
+
 swiper2.on('slideChange', function () {
-        console.log(swiper2.realIndex);
+      let btns = document.querySelectorAll('#video-slider-arrow-circle')
+      for(let i = 0; i < btns.length; i++){
+        btns[i].classList.remove('first-page')
+        if (swiper2.realIndex + 1 == btns[i].dataset.indexNumber) {
+          btns[i].classList.toggle('first-page');
+        }
+    }
 });
 
 
@@ -105,7 +112,6 @@ const marker5 = new mapboxgl.Marker({ color: "gray" })
 
   function stopVideo(){
     let videos = document.querySelectorAll('#ytb-video')
-    console.log(videos)
     for(let i = 0; i < videos.length; i++){
       videos[i].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
