@@ -10,6 +10,9 @@
   <link class="favicon" href="assets/favicon.ico" rel="icon">
   <link href="style.css" rel="stylesheet" type="text/css">
   <link href="normalize.css" rel="stylesheet" type="text/css">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
   <header class="header" id="header">
@@ -108,7 +111,7 @@ Cпасибо ^ↀᴥↀ^
           </div>
         <div class="welcome-pagination-container swiper-pagination">
           <div class="welcome-slide-num">
-            <span class="slide-num">01</span> <span class="slide-num">|</span> <span class="slide-num">05</span>
+            <span class="slide-num" id="active-slide-num">01</span> <span class="slide-num">|</span> <span class="slide-num">05</span>
           </div>
           <div class="carousel-pagination">
           </div>
@@ -188,7 +191,15 @@ Cпасибо ^ↀᴥↀ^
               <br id="explore-br"> been damaged in any way, but because it looked different.</p>
           </div>
         </div>
-        <div class="explore-section-picture-container"><img class="explore-slider" src="assets/images/explore-slider/explore-slider.webp" alt="explore-slider"> <img alt="Las Meninas" class="las-meninas" height="700" src="assets/images/las-meninas.webp" width="720"></div>
+        <div class="explore-section-picture-container">
+          <div class="imgAfter">
+            <div class="explore-img">
+              <div class="imgBefore" id="imgBefore" >
+                <input id="inputExplore" class="inputExplore" type="range" value="60" max="100">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="video-section padding" id="video">
@@ -216,9 +227,32 @@ Cпасибо ^ↀᴥↀ^
           </div>
         </div>
         <div class="video-slider">
-          <iframe allowfullscreen loading="lazy" height="254" data-aload src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" width="452"></iframe>
-          <iframe allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" width="452"></iframe>
-          <iframe class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" width="452"></iframe>
+          <div class="swiper2">
+           <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="slider-iframe">
+                <iframe allowfullscreen loading="lazy" height="254" data-aload src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" width="452"></iframe> 
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-iframe">
+                <iframe allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" width="452"></iframe>
+              </div>
+            </div>
+             <div class="swiper-slide">
+              <div class="slider-iframe">
+                 <iframe class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" width="452"></iframe>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-iframe">
+                 <iframe class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" width="452"></iframe>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
         </div>
         <div class="video-slider-pagination-container">
           <div class="video-slider-pagination">
@@ -400,7 +434,8 @@ Cпасибо ^ↀᴥↀ^
               <a href="mailto:info@louvre.fr" class="mail-link contacts-text_small">
             mail: info@louvre.fr</a>
             </div>
-          </div><img alt="Map" class="map" src="assets/images/map.webp"></div>
+          </div>
+          <div id='map' class="map"></div>
       </div>
     </section>
   </main>
@@ -482,6 +517,7 @@ Cпасибо ^ↀᴥↀ^
       Pratasevich</a>
     </div>
   </footer>
+  <button class="top-btn" id="top-btn" onclick="toTop()" ></button>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="script.js">
   </script>
