@@ -101,3 +101,12 @@ const marker4 = new mapboxgl.Marker({ color: "gray" })
 const marker5 = new mapboxgl.Marker({ color: "gray" })
   .setLngLat([2.3365, 48.8625])
   .addTo(map);
+
+
+  function stopVideo(){
+    let videos = document.querySelectorAll('#ytb-video')
+    console.log(videos)
+    for(let i = 0; i < videos.length; i++){
+      videos[i].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  }

@@ -57,15 +57,7 @@
     </div>
   </header>
   <main>
-        <!-- 
-Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
-Cпасибо ^ↀᴥↀ^
-  -->
     <section class="welcome-section">
-    <!-- 
-Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
-Cпасибо ^ↀᴥↀ^
-  -->
       <div class="welcome-wrapper">
         <div class="welcome-container">
           <div class="welcome-text">
@@ -74,10 +66,6 @@ Cпасибо ^ↀᴥↀ^
             <p class="section-title title_castle-to-museum">From the castle to the museum</p>
           </div><a class="btn-discover btn-discover_link" href="tours/tour7.html" target="_blank">Discover the Louvre</a>
         </div>
-    <!-- 
-Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
-Cпасибо ^ↀᴥↀ^
-  -->
         <!-- Slider main container -->
         <div class="swiper">
           <!-- Additional required wrapper -->
@@ -230,27 +218,27 @@ Cпасибо ^ↀᴥↀ^
            <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="slider-iframe">
-                <iframe allowfullscreen loading="lazy" height="254" data-aload src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" width="452"></iframe> 
+                <iframe id="ytb-video" allowfullscreen loading="lazy" height="254" data-aload src="https://www.youtube.com/embed/zp1BXPX8jcU?enablejsapi=1" title="YouTube video player" width="452"></iframe> 
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slider-iframe">
-                <iframe allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" width="452"></iframe>
+                <iframe id="ytb-video"  allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo?enablejsapi=1" title="YouTube video player" width="452"></iframe>
               </div>
             </div>
              <div class="swiper-slide">
               <div class="slider-iframe">
-                 <iframe class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" width="452"></iframe>
+                 <iframe id="ytb-video"  class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY?enablejsapi=1" title="YouTube video player" width="452"></iframe>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slider-iframe">
-                 <iframe class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" width="452"></iframe>
+                 <iframe id="ytb-video"  class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/aWmJ5DgyWPI?enablejsapi=1" title="YouTube video player" width="452"></iframe>
               </div>
             </div>
               <div class="swiper-slide">
               <div class="slider-iframe">
-                 <iframe class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player" width="452"></iframe>
+                 <iframe id="ytb-video"  class="third-video" allowfullscreen loading="lazy" height="254" src="https://www.youtube.com/embed/2OR0OCr6uRE?enablejsapi=1" title="YouTube video player" width="452"></iframe>
               </div>
             </div>
             </div>
@@ -258,13 +246,13 @@ Cпасибо ^ↀᴥↀ^
         </div>
         <div class="video-slider-pagination-container">
           <div class="video-slider-pagination">
-            <button class="video-slider-btn video-slider-arrow-left"></button>
+            <button class="video-slider-btn video-slider-arrow-left" onclick="stopVideo()"></button>
             <button class="video-slider-btn video-slider-arrow-circle first-page"></button>
-            <button class="video-slider-btn video-slider-arrow-circle"></button>
-            <button class="video-slider-btn video-slider-arrow-circle"></button>
-            <button class="video-slider-btn video-slider-arrow-circle"></button>
-            <button class="video-slider-btn video-slider-arrow-circle"></button>
-            <button class="video-slider-btn video-slider-arrow-right"></button>
+            <button class="video-slider-btn video-slider-arrow-circle" id="video-slider-arrow-circle"></button>
+            <button class="video-slider-btn video-slider-arrow-circle" id="video-slider-arrow-circle"></button>
+            <button class="video-slider-btn video-slider-arrow-circle" id="video-slider-arrow-circle"></button>
+            <button class="video-slider-btn video-slider-arrow-circle" id="video-slider-arrow-circle"></button>
+            <button class="video-slider-btn video-slider-arrow-right" onclick="stopVideo()"></button>
           </div>
         </div>
       </div>
