@@ -35,18 +35,18 @@ const swiper = new Swiper('.swiper', {
   // And if we need scrollbar
 });
 const swiper2 = new Swiper('.swiper2', {
+  loop: true,
  spaceBetween: 45,
- slidesPerView: 4,
-
+ slidesPerView: 3,
   pagination: {
-    el: '',
     clickable: true,
+   
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '',
-    prevEl: '',
+    nextEl: '.video-slider-arrow-right',
+    prevEl: '.video-slider-arrow-left',
   },
 
   // And if we need scrollbar
@@ -54,7 +54,9 @@ const swiper2 = new Swiper('.swiper2', {
 swiper.on('slideChange', function () {
         activeSlideNum.innerHTML = '0' + (swiper.realIndex + 1);
 });
-
+swiper2.on('slideChange', function () {
+        console.log(swiper2.realIndex);
+});
 
 
 const progress = document.querySelector('.vid');
@@ -74,7 +76,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaXZhbnByYXRhc2V2aWNoIiwiYSI6ImNrdXF0MXBiYzBxc
 const map = new mapboxgl.Map({
 container: 'map', // container ID
 style: 'mapbox://styles/mapbox/light-v10', // style URL
-center:  [2.340, 48.8610], // starting position [lng, lat]
+center:  [2.337, 48.8607], // starting position [lng, lat]
 zoom: 16 // starting zoom
 });
 
