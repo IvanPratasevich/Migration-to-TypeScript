@@ -83,8 +83,12 @@ body {
   opacity: 0.8;
   cursor: pointer;
   transition: 0.3s;
+  transition: transform 1s;
 }
-
+.rotated {
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
 .player-icon:hover,
 .slider-icon:hover,
 .change-quote:hover {
@@ -92,8 +96,7 @@ body {
 }
 
 .player-icon:active,
-.slider-icon:active,
-.change-quote:active {
+.slider-icon:active {
   border: 0;
   outline: 0;
   transform: scale(1.1);
