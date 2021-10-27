@@ -7,6 +7,12 @@
   <link href="assets/favicon.ico" rel="shortcut icon" />
   <link rel="stylesheet" href="css/owfont-regular.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href=
+  "https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,400;0,500;1,600&display=swap"
+  rel="stylesheet">
+  <link  rel="stylesheet" href="normalize.css">
   <title>momentum</title>
 </head>
 <body class="body">
@@ -32,6 +38,27 @@
     </div>
   </header>
   <main class="main">
+    <div class="todo-container">
+      <div class="overlay">
+        <div class="todo-block">
+          <div class="close" onclick="closeForm()">
+            <svg height="27" viewbox="0 0 27 27" width="27" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L26 26" stroke="#030303"></path>
+              <path d="M26 1L1 26" stroke="#030303"></path>
+            </svg>
+          </div>
+          <div class="wrapper">
+            <div class="container">
+              <div id="newtag">
+                <input id="create-tag" placeholder="Add tags" type="text" >
+                 <button data-key="13" id="add-btn" onclick= "todo.action()">Add</button>
+              </div>
+            </div>
+            <div id="tags"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="slider-icons">
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
@@ -50,6 +77,7 @@
       <div class="author"></div>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <button class="todo-btn"></button>
+  <script  src="script.js"></script>
 </body>
 </html>
