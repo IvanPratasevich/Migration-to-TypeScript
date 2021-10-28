@@ -66,6 +66,12 @@ if (!localStorage.getItem("city")) {
   city.value = localStorage.getItem("city");
 }
 
+if (localStorage.getItem("lang") === "ru") {
+  translateBtn[0].classList.add('translate-btn-active')
+} else{
+  translateBtn[1].classList.add('translate-btn-active')
+}
+
 //Time
 function showTime() {
   const date = new Date();
@@ -254,7 +260,7 @@ async function getQuotes() {
   }
   const res = await fetch(quotes);
   const data = await res.json();
-  let randomQuote = getRandomNum(0, data.length);
+  let randomQuote = getRandomNum(0, data.length - 1);
   quote.textContent = `${data[randomQuote].text}`;
   author.textContent = `${data[randomQuote].author}`;
 }
@@ -474,6 +480,8 @@ function showMessage() {
 function translate() {
   switch (this.getAttribute("lang")) {
     case "ru":
+      translateBtn[1].classList.remove('translate-btn-active')
+      translateBtn[0].classList.add('translate-btn-active');
       localStorage.setItem("lang", defaultLang.ru);
       lang = defaultLang.ru;
       if (city.value === "Minsk") {
@@ -491,6 +499,8 @@ function translate() {
       break;
 
     case "en":
+      translateBtn[0].classList.remove('translate-btn-active')
+      translateBtn[1].classList.add('translate-btn-active');
       localStorage.setItem("lang", defaultLang.en);
       lang = defaultLang.en;
       if (city.value === "Минск") {
