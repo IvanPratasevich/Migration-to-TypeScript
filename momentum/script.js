@@ -8,6 +8,15 @@ let mode = "";
 let tagsArrayLocalStorage = [];
 let example = "car man boy video";
 
+let defaultLang = { en: "en", ru: "ru" };
+let lang = localStorage.hasOwnProperty("lang");
+if (!lang) {
+  localStorage.setItem("lang", defaultLang.en);
+  lang = defaultLang.en;
+} else {
+  lang = localStorage.getItem("lang");
+}
+
 const greetingField = document.querySelector(".greeting");
 const time = document.querySelector(".time");
 const options = { weekday: "long", month: "long", day: "numeric" };
@@ -22,13 +31,11 @@ let randomNum = getRandomNum(1, 20);
 let bgNum = randomNum;
 
 const city = document.querySelector(".city");
-const defaultCity = { en: "Minsk" };
+const defaultCity = { en: "Minsk", ru: "Минск" };
 
 const overlay = document.querySelector(".overlay");
 const todoBlock = document.querySelector(".todo-block");
 const todoBtn = document.querySelector(".todo-btn");
-
-city.value = localStorage.getItem("city") || defaultCity.en;
 
 const weatherError = document.querySelector(".weather-error");
 const weatherIcon = document.querySelector(".weather-icon");
@@ -41,6 +48,24 @@ const changeQuote = document.querySelector(".change-quote");
 const author = document.querySelector(".author");
 const quote = document.querySelector(".quote");
 
+const translateBtn = document.querySelectorAll(".translate");
+
+if (!localStorage.getItem("city")) {
+  switch (lang) {
+    case "ru":
+      city.value = defaultCity.ru;
+      localStorage.setItem("city", defaultCity.ru);
+      break;
+
+    case "en":
+      city.value = defaultCity.en;
+      localStorage.setItem("city", defaultCity.en);
+      break;
+  }
+} else {
+  city.value = localStorage.getItem("city");
+}
+
 //Time
 function showTime() {
   const date = new Date();
@@ -51,7 +76,10 @@ function showTime() {
 //Date
 function showDate() {
   const date = new Date();
-  const currentDate = date.toLocaleDateString("en-Us", options);
+  let currentDate = date.toLocaleDateString("en-Us", options);
+  if (localStorage.getItem("lang") === "ru") {
+    currentDate = date.toLocaleDateString("ru-Ru", options);
+  }
   dateApp.textContent = currentDate;
   setTimeout(showDate, 1000);
 }
@@ -60,25 +88,60 @@ function getTimeOfDay() {
   const date = new Date();
   let timeOfDay = "";
   const hours = date.getHours();
-  if (hours >= 0 && hours < 6) {
-    timeOfDay = "night";
-  } else if (hours < 12 && hours >= 6) {
-    timeOfDay = "morning";
-  } else if (hours >= 12 && hours < 18) {
-    timeOfDay = "afternoon";
-  } else if (hours >= 18 && hours <= 23) {
-    timeOfDay = "evening";
+  switch (lang) {
+    case "ru":
+      if (hours >= 0 && hours < 6) {
+        timeOfDay = "ночи";
+      } else if (hours < 12 && hours >= 6) {
+        timeOfDay = "утро";
+      } else if (hours >= 12 && hours < 18) {
+        timeOfDay = "день";
+      } else if (hours >= 18 && hours <= 23) {
+        timeOfDay = "вечер";
+      }
+      break;
+    case "en":
+      if (hours >= 0 && hours < 6) {
+        timeOfDay = "night";
+      } else if (hours < 12 && hours >= 6) {
+        timeOfDay = "morning";
+      } else if (hours >= 12 && hours < 18) {
+        timeOfDay = "afternoon";
+      } else if (hours >= 18 && hours <= 23) {
+        timeOfDay = "evening";
+      }
+      break;
   }
   return timeOfDay;
 }
 //Show Greeting
 function showGreeting() {
   const timeOfDay = getTimeOfDay();
-  greetingField.textContent = `Good ${timeOfDay},`;
+  let greetingText = "";
+  switch (lang) {
+    case "ru":
+      if (timeOfDay == "утро") {
+        greetingText = "Доброе";
+      } else if (timeOfDay == "ночь") {
+        greetingText = "Доброй";
+        timeOfDay = "ночи";
+      } else {
+        greetingText = "Добрый";
+      }
+
+      break;
+    case "en":
+      greetingText = "Good";
+      break;
+  }
+  greetingField.textContent = `${greetingText} ${timeOfDay},`;
   setTimeout(showGreeting, 1000);
 }
 function getLocalStorage() {
   name.placeholder = "[Enter name]";
+  if (localStorage.getItem("lang") === "ru") {
+    name.placeholder = "[Введите имя]";
+  }
   if (localStorage.getItem("name")) {
     name.value = localStorage.getItem("name");
   }
@@ -126,10 +189,11 @@ function getSlidePrev() {
   setBg();
 }
 async function getWeather() {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=60a196b04fe428d2ebd80f7d243fa3c7&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem(
+    "city"
+  )}&lang=${lang}&appid=60a196b04fe428d2ebd80f7d243fa3c7&units=metric`;
   const res = await fetch(url);
   const data = await res.json();
-  console.log(city.value);
   if (!res.ok) {
     if (city.value === "") {
       weatherError.textContent = `You haven't entered anything`;
@@ -148,26 +212,46 @@ async function getWeather() {
       return;
     }
   } else {
-    localStorage.setItem("city", city.value);
-    weatherError.textContent = "";
-    weatherIcon.classList.add("weather-icon");
-    weatherIcon.classList.add("owf");
-    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-    temperature.textContent = `${Math.round(data.main.temp)}°C`;
-    weatherDescription.textContent = data.weather[0].description;
-    wind.textContent =
-      "Wind speed:" + " " + Math.round(data.wind.speed) + " m/s";
-    humidity.textContent =
-      "Humidity:" + " " + Math.round(data.main.humidity) + "%";
+    switch (lang) {
+      case "ru":
+        weatherError.textContent = "";
+        weatherIcon.classList.add("weather-icon");
+        weatherIcon.classList.add("owf");
+        weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+        temperature.textContent = `${Math.round(data.main.temp)}°C`;
+        weatherDescription.textContent = data.weather[0].description;
+        wind.textContent =
+          "Скорость ветра:" + " " + Math.round(data.wind.speed) + " m/s";
+        humidity.textContent =
+          "Влажность:" + " " + Math.round(data.main.humidity) + "%";
+        break;
+
+      case "en":
+        weatherError.textContent = "";
+        weatherIcon.classList.add("weather-icon");
+        weatherIcon.classList.add("owf");
+        weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+        temperature.textContent = `${Math.round(data.main.temp)}°C`;
+        weatherDescription.textContent = data.weather[0].description;
+        wind.textContent =
+          "Wind speed:" + " " + Math.round(data.wind.speed) + " m/s";
+        humidity.textContent =
+          "Humidity:" + " " + Math.round(data.main.humidity) + "%";
+        break;
+    }
   }
 }
 city.addEventListener("change", () => {
   city.value = city.value.replace(regex, "");
+  localStorage.setItem("city", city.value);
   getWeather();
 });
 
 async function getQuotes() {
-  const quotes = "https://type.fit/api/quotes";
+  let quotes = "https://type.fit/api/quotes";
+  if (localStorage.getItem("lang") === "ru") {
+    quotes = "./quotes_ru.json";
+  }
   const res = await fetch(quotes);
   const data = await res.json();
   let randomQuote = getRandomNum(0, data.length);
@@ -386,6 +470,47 @@ function showMessage() {
   `;
   console.log(tagManager);
 }
+
+function translate() {
+  switch (this.getAttribute("lang")) {
+    case "ru":
+      localStorage.setItem("lang", defaultLang.ru);
+      lang = defaultLang.ru;
+      if (city.value === "Minsk") {
+        city.value = defaultCity.ru;
+        localStorage.setItem("city", defaultCity.ru);
+      } else {
+        city.value = city.value;
+        localStorage.setItem("city", city.value);
+      }
+      getTimeOfDay();
+      showGreeting();
+      getWeather();
+      getLocalStorage();
+      getQuotes()
+      break;
+
+    case "en":
+      localStorage.setItem("lang", defaultLang.en);
+      lang = defaultLang.en;
+      if (city.value === "Минск") {
+        city.value = defaultCity.en;
+        localStorage.setItem("city", defaultCity.en);
+      } else {
+        city.value = city.value;
+        localStorage.setItem("city", city.value);
+      }
+      getTimeOfDay();
+      showGreeting();
+      getWeather();
+      getLocalStorage();
+      getQuotes()
+      break;
+  }
+}
+
+translateBtn[0].addEventListener("click", translate);
+translateBtn[1].addEventListener("click", translate);
 
 window.addEventListener("load", getLocalStorage);
 window.addEventListener("load", setBg);
