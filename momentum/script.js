@@ -49,6 +49,31 @@ const author = document.querySelector(".author");
 const quote = document.querySelector(".quote");
 
 const translateBtn = document.querySelectorAll(".translate");
+const playListBlock = document.querySelector(".play-list");
+const playBtn = document.querySelector(".play");
+
+const playList = [
+  {
+    title: "Aqua Caelestis",
+    src: "./assets/sounds/Aqua Caelestis.mp3",
+    duration: "0:39",
+  },
+  {
+    title: "River Flows In You",
+    src: "./assets/sounds/River Flows In You.mp3",
+    duration: "1:37",
+  },
+  {
+    title: "Ennio Morricone",
+    src: "./assets/sounds/Ennio Morricone.mp3",
+    duration: "1:37",
+  },
+  {
+    title: "Summer Wind",
+    src: "./assets/sounds/Summer Wind.mp3",
+    duration: "1:50",
+  },
+];
 
 if (!localStorage.getItem("city")) {
   switch (lang) {
@@ -67,9 +92,9 @@ if (!localStorage.getItem("city")) {
 }
 
 if (localStorage.getItem("lang") === "ru") {
-  translateBtn[0].classList.add('translate-btn-active')
-} else{
-  translateBtn[1].classList.add('translate-btn-active')
+  translateBtn[0].classList.add("translate-btn-active");
+} else {
+  translateBtn[1].classList.add("translate-btn-active");
 }
 
 //Time
@@ -254,6 +279,7 @@ city.addEventListener("change", () => {
 });
 
 async function getQuotes() {
+  playItems[0].classList.add("play-item-active");
   let quotes = "https://type.fit/api/quotes";
   if (localStorage.getItem("lang") === "ru") {
     quotes = "./quotes_ru.json";
@@ -442,17 +468,6 @@ document.querySelector("#create-tag").addEventListener("keypress", (event) => {
     todo.action();
   }
 });
-function showGrade() {
-  let grade = `
-  Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания).
-  Cпасибо ^ↀᴥↀ^
-  `;
-  console.log(
-    "%c Уважаемые проверяющие, не успел доделать проект. Проверьте, пожалуйста, работу ещё раз в четверг вечером (последний день проверки задания). Cпасибо ^ↀᴥↀ^",
-    "color: green; font-weight: bold; font-size: 20px"
-  );
-  console.log(grade);
-}
 function showMessage() {
   let tagManager = `
   Компонент для создания тэгов TagList (ToDo)
@@ -480,8 +495,8 @@ function showMessage() {
 function translate() {
   switch (this.getAttribute("lang")) {
     case "ru":
-      translateBtn[1].classList.remove('translate-btn-active')
-      translateBtn[0].classList.add('translate-btn-active');
+      translateBtn[1].classList.remove("translate-btn-active");
+      translateBtn[0].classList.add("translate-btn-active");
       localStorage.setItem("lang", defaultLang.ru);
       lang = defaultLang.ru;
       if (city.value === "Minsk") {
@@ -495,12 +510,12 @@ function translate() {
       showGreeting();
       getWeather();
       getLocalStorage();
-      getQuotes()
+      getQuotes();
       break;
 
     case "en":
-      translateBtn[0].classList.remove('translate-btn-active')
-      translateBtn[1].classList.add('translate-btn-active');
+      translateBtn[0].classList.remove("translate-btn-active");
+      translateBtn[1].classList.add("translate-btn-active");
       localStorage.setItem("lang", defaultLang.en);
       lang = defaultLang.en;
       if (city.value === "Минск") {
@@ -514,11 +529,76 @@ function translate() {
       showGreeting();
       getWeather();
       getLocalStorage();
-      getQuotes()
+      getQuotes();
       break;
   }
 }
 
+playList.forEach((elem) => {
+  const li = document.createElement("li");
+  li.classList.add("play-item");
+  li.textContent = elem.title;
+  playListBlock.append(li);
+});
+
+const prevBtn = document.querySelector(".play-prev");
+const nextBtn = document.querySelector(".play-next");
+let audio = new Audio();
+let index = 0;
+let isPlay = false;
+let length = playList.length;
+let currentTime = 0;
+const playItems = document.querySelectorAll(".play-item");
+
+function playAudio() {
+  if (isPlay === false) {
+    audio.src = playList[index].src;
+    audio.currentTime = 0;
+    audio.play();
+    playItems[index].classList.add("play-item-active");
+    return (isPlay = true);
+  } else {
+    audio.src = playList[index].src;
+    audio.currentTime = 0;
+    audio.pause();
+    return (isPlay = false);
+  }
+}
+function playNext() {
+  index++;
+  if (index >= 0) {
+    if (index == 4) {
+      playItems[3].classList.remove("play-item-active");
+      return (index = 0),(isPlay = false), playAudio();
+    } else {
+      playItems[index - 1].classList.remove("play-item-active");
+      return (isPlay = false), playAudio(index);
+    }
+  }
+  playBtn.classList.toggle("pause");
+}
+
+function playPrev() {
+  if (index == 0) {
+    playItems[0].classList.remove("play-item-active");
+    return (index = 3),(isPlay = false), playAudio();
+  }
+  index--
+  if (index >= 0){
+      playItems[index + 1].classList.remove("play-item-active");
+      return (isPlay = false), playAudio(index);
+    }
+  playBtn.classList.toggle("pause");
+}
+
+function toggleBtn() {
+  playBtn.classList.toggle("pause");
+}
+
+prevBtn.addEventListener("click", playPrev);
+nextBtn.addEventListener("click", playNext);
+playBtn.addEventListener("click", toggleBtn);
+playBtn.addEventListener("click", playAudio);
 translateBtn[0].addEventListener("click", translate);
 translateBtn[1].addEventListener("click", translate);
 
@@ -528,7 +608,6 @@ window.addEventListener("load", getWeather);
 window.addEventListener("load", setBg);
 window.addEventListener("load", getQuotes);
 window.addEventListener("load", quotesAnimation);
-window.addEventListener("load", showGrade);
 changeQuote.addEventListener("click", getQuotes);
 todoBtn.addEventListener("click", getTodo);
 changeQuote.addEventListener("click", quotesAnimation);
