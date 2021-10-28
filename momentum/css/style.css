@@ -307,7 +307,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../assets/svg/todo.svg);
-  transition: .1s;
+  transition: 0.1s;
 }
 .todo-btn:hover {
   transform: scale(1.3);
@@ -470,4 +470,32 @@ body {
   width: 27px;
   height: 27px;
   cursor: pointer;
+}
+/*TODO END*/
+.translate-container {
+  min-width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+.translate {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+  border: 0px;
+}
+.translate:hover{
+  transform: scale(1.2);
+}
+.ru {
+  background-image: url(../assets/img/russian.png);
+}
+.en {
+  background-image: url(../assets/img/english.png);
+}
+.translate-btn-active{
+  border: 2px solid yellow;
 }
