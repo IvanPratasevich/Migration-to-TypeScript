@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "rules": {
+    "func-names": ["error", "never"],
+    "max-classes-per-file": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
