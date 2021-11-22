@@ -1,0 +1,235 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #d9e2e7;
+}
+a {
+  text-decoration: none;
+}
+.main-wrapper {
+  min-height: calc(100vh - 100px);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.logo {
+  margin: 0px;
+  padding-top: 20px;
+  width: 220px;
+  height: 140px;
+  background: url(./assets/svg/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+.menu-main {
+  display: flex;
+  padding-top: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.artists-quiz,
+.pictures-quiz {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+  border-left: 1px solid #d9e2e7;
+  border-top: 1px solid #d9e2e7;
+}
+.artists-quiz:hover,
+.pictures-quiz:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px #660033, 2px 2px #660033, 3px 3px #660033, 4px 4px #660033,
+    5px 5px #660033, 6px 6px #660033, 7px 7px #660033;
+  -webkit-transform: translateX(-7px);
+  transform: translateX(-7px);
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+}
+.artists-quiz:hover .main-menu__text,
+.pictures-quiz:hover .main-menu__text {
+  padding-right: 10px;
+}
+
+.artists-quiz-img {
+  background: url(./assets/images/artists-quiz.jpg);
+  background-position: 50% 5%;
+}
+.pictures-quiz-img {
+  background: url(./assets/images/pictures-quiz.jpg);
+  background-position: 50% 5%;
+}
+.main-menu__img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 415px;
+  width: 415px;
+}
+
+.main-menu__text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #660033;
+  font-weight: 300;
+  padding-right: 0px;
+  transition: 0.3s ease-in-out;
+}
+.text_bold {
+  font-weight: 700;
+}
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  background: #660033;
+  width: 160px;
+  height: 50px;
+  transition: 0.6s ease-in-out;
+}
+.rotate {
+  transform: rotate(360deg);
+}
+.settings__icon {
+  background: url(./assets/svg/settings.svg);
+  background-position: center;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  border-radius: 0px;
+}
+.settings__text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100px;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.author-name {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #660033;
+  font-weight: 300;
+  padding-right: 0px;
+  transition: 1s;
+}
+.author-name:hover {
+  color: white;
+}
+.year {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #660033;
+}
+.rs-logo {
+  background: url(./assets/images/rs-school.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 65px;
+  width: 180px;
+}
+.hide {
+  display: none;
+}
+
+.slideLeft {
+  animation-name: slideLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(150%);
+  }
+  50% {
+    transform: translateX(-8%);
+  }
+  65% {
+    transform: translateX(4%);
+  }
+  80% {
+    transform: translateX(-4%);
+  }
+  95% {
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-main {
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .main-menu__text {
+    margin: 0px;
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    top: 83%;
+  }
+  .main-menu__img {
+    width: 500px;
+    height: 320px;
+  }
+  .artists-quiz-img {
+    background-position: 50% 35%;
+  }
+  .pictures-quiz-img {
+    background-position: 50% 2%;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rs-logo {
+    display: none;
+  }
+}
