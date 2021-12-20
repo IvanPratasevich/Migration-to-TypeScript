@@ -1,9 +1,18 @@
 body {
+  margin: 0;
   color: #fff;
   background: #17181c;
   font-family: sans-serif;
 }
-
+.progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 4px;
+  background-color: lime;
+  z-index: 100;
+}
 header {
   padding: 10px 30px;
   text-align: center;
