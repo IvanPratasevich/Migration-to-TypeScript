@@ -1,35 +1,61 @@
 body {
-    color: #fff;
-    background: #17181c;
-    font-family: sans-serif;
+  color: #fff;
+  background: #17181c;
+  font-family: sans-serif;
 }
 
 header {
-    padding: 10px 30px;
+  padding: 10px 30px;
+  text-align: center;
 }
 
 header h1 {
-    font-size: 40px;
-    font-weight: 800;
+  font-size: 40px;
+  font-weight: 800;
 }
 
 footer {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
 }
 footer .copyright a {
-    color: #444;
+  text-decoration: none;
+  color: #444;
+  transition: 0.5s;
 }
 footer .copyright a:hover {
-    color: #555;
+  color: lime;
 }
 footer .copyright:before {
-    content: '©';
+  content: '©';
+}
+.author-github {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+.author-github:hover {
+  color: lime;
+}
+.rs-logo {
+  height: 100px;
+  width: 150px;
+  background-image: url('https://rs.school/images/rs_school_js.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(64%) sepia(73%) saturate(3659%) hue-rotate(180deg) brightness(100%) contrast(108%);
+}
+@media (max-width: 350px) {
+  header h1 {
+    font-size: 35px;
+  }
 }
