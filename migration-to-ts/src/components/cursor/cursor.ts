@@ -23,10 +23,13 @@ class Cursor {
     }) as EventListener);
   }
   mouseHover() {
+    const cursor = document.querySelector('.cursor') as HTMLElement;
     document.addEventListener('mouseover', ((event: MouseEvent, target: HTMLElement) => {
       let e = event.target as Element;
-      console.log(e.className);
-      if (e.className == 'news__item') {
+      if (e.tagName == 'A') {
+        cursor.id = 'animation';
+      } else {
+        cursor.id = '';
       }
     }) as EventListener);
   }

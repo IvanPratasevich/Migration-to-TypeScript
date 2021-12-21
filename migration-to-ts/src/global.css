@@ -1,6 +1,9 @@
 html {
   cursor: none;
 }
+a {
+  cursor: none;
+}
 body {
   margin: 0;
   color: #fff;
@@ -16,6 +19,20 @@ body {
   height: 4px;
   background-color: lime;
   z-index: 100;
+}
+#animation {
+  width: 80px;
+  height: 80px;
+  border: 4px dashed yellow;
+  animation: animate 10s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .cursor {
   position: fixed;
