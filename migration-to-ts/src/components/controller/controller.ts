@@ -1,30 +1,30 @@
 import AppLoader from './appLoader';
-import Article from '../view/appView';
+import { Endpoints } from '../enums/enums';
 
 class AppController extends AppLoader {
   getSources(callback: () => void) {
     super.getResp(
       {
-        endpoint: 'sources',
+        endpoint: Endpoints.sources,
       },
       callback
     );
   }
 
-  getNews(e: Event, callback: () => void) {
-    let target = e.target as HTMLDivElement;
-    const newsContainer = e.currentTarget as HTMLDivElement;
+  getNews(e: MouseEvent, callback: () => void) {
+    let target = <HTMLElement>e.target;
+    const newsContainer = <HTMLElement>e.currentTarget;
 
     while (target !== newsContainer) {
       if (target.classList.contains('source__item')) {
-        const sourceId = target.getAttribute('data-source-id') as string;
+        const sourceId: string = target.getAttribute('data-source-id')!;
         if (newsContainer.getAttribute('data-source') !== sourceId) {
           newsContainer.setAttribute('data-source', sourceId);
           super.getResp(
             {
-              endpoint: 'everything',
+              endpoint: Endpoints.everything,
               options: {
-                sources: sourceId,
+                sources: Endpoints.sources,
               },
             },
             callback

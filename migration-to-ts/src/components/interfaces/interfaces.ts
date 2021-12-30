@@ -1,4 +1,4 @@
-export default interface Article {
+export interface Article {
   articles: [];
   sources: [];
 }
@@ -7,7 +7,7 @@ type source = {
   name: string;
 };
 
-export default interface DataNews {
+export interface DataNews {
   author: string;
   content: string;
   title: string;

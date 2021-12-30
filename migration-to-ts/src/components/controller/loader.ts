@@ -1,5 +1,7 @@
 import Article from '../view/appView';
 import { Methods } from '../enums/enums';
+import { Endpoints } from '../enums/enums';
+type optionsObject = { [apikey: string]: string };
 class Loader {
   baseLink: string;
   options: { [key: string]: string };
@@ -10,7 +12,7 @@ class Loader {
   }
 
   getResp(
-    { endpoint = 'string', options = {} },
+    { endpoint, options = {} }: { endpoint: Endpoints; options?: Record<string, string> },
     callback: () => void = () => {
       console.error('No callback for GET response');
     }
@@ -28,9 +30,9 @@ class Loader {
     return res;
   }
 
-  makeUrl(options = {}, endpoint = 'string') {
-    const urlOptions = { ...this.options, ...options };
-    let url = `${this.baseLink}${endpoint}?`;
+  makeUrl(options: optionsObject, endpoint: Endpoints) {
+    const urlOptions: optionsObject = { ...this.options, ...options };
+    let url: string = `${this.baseLink}${endpoint}?`;
 
     (Object.keys(urlOptions) as Array<keyof typeof urlOptions>).forEach((key) => {
       url += `${key}=${urlOptions[key as keyof typeof urlOptions]}&`;
@@ -39,7 +41,7 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  load(method: string, endpoint = 'string', callback: (data: Article) => void, options = {}) {
+  load(method: string, endpoint: Endpoints, callback: (data: Article) => void, options = {}) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())

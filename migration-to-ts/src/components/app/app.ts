@@ -1,14 +1,14 @@
 import AppController from '../controller/controller';
 import AppView from '../view/appView';
-import Article from '../interfaces/interfaces';
+import { Article } from '../interfaces/interfaces';
 import Progress from '../progress/progress';
 import Cursor from '../cursor/cursor';
 
 class App {
-  controller: AppController;
-  view: AppView;
-  progress: Progress;
-  cursor: Cursor;
+  private controller: AppController;
+  private view: AppView;
+  private progress: Progress;
+  private cursor: Cursor;
   constructor() {
     this.controller = new AppController();
     this.view = new AppView();
@@ -17,7 +17,7 @@ class App {
   }
 
   start() {
-    (document.querySelector('.sources') as HTMLElement).addEventListener('click', (e: Event) =>
+    (document.querySelector('.sources') as HTMLElement).addEventListener('click', (e: MouseEvent) =>
       this.controller.getNews(e, (data?: Article) => this.view.drawNews(data))
     );
     this.controller.getSources((data?: Article) => this.view.drawSources(data));
