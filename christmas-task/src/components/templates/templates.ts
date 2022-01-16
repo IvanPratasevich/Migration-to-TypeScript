@@ -4,10 +4,16 @@ export interface Template {
 export const HomeComponent: Template = {
   render: () => {
     return `
-      <section>
-        <h1>Home</h1>
-        <p>This is just a test</p>
-      </section>
+    <main class="main">
+      <div class="main-wrapper">
+        <div class="start-card">
+          <h1 class="start-card__text">Помогите бабушке нарядить елку</h1>
+        </div>
+        <a class="btn-start" href="#/page1">
+          <span class="btn-start__text">Начать</span>
+        </a>
+      </div>
+    </main>
     `;
   },
 };
