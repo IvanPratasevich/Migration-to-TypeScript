@@ -2,6 +2,7 @@
 li {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
   transition: 0.5s;
@@ -13,14 +14,17 @@ a {
   --main-font: 'Mountains of Christmas', cursive;
   --white: #ffff;
 }
+
 .header {
   height: 80px;
   background-color: #192f2d;
 }
+
 .container {
   max-width: 1680px;
   margin: 0 auto;
 }
+
 .main {
   display: flex;
   align-items: center;
@@ -34,18 +38,21 @@ a {
   background-position: center center;
   z-index: 1;
 }
+
 .footer {
   display: flex;
   align-items: center;
   height: 80px;
   background-color: #192f2d;
 }
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .start-card {
   display: flex;
   align-items: center;
@@ -54,6 +61,7 @@ a {
   height: 249px;
   background: #192f2d;
 }
+
 .start-card__text {
   font-family: 'Mountains of Christmas', cursive;
   font-style: normal;
@@ -97,6 +105,7 @@ a {
     background-position: 0 0;
   }
 }
+
 .btn-start {
   display: flex;
   justify-content: center;
@@ -110,6 +119,7 @@ a {
   border-radius: 30px;
   transition: 0.5s;
 }
+
 .btn-start__text {
   font-family: 'Mountains of Christmas', cursive;
   font-style: normal;
@@ -119,6 +129,7 @@ a {
   text-align: center;
   color: #ffffff;
 }
+
 .btn-start:hover {
   background-color: #24c5db;
   box-shadow: 0px 0px 8px #24c5db;
@@ -130,19 +141,50 @@ a {
   align-items: center;
   height: 80px;
 }
+
 .navigation__links {
   display: flex;
   width: 350px;
   justify-content: space-between;
 }
+
 .link {
+  position: relative;
   color: var(--white);
   font-family: var(--main-font);
   font-size: 30px;
+  letter-spacing: 0.5px;
 }
+
+.link::before,
+.link::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  background-color: #ffff;
+  transition: 0.5s;
+}
+
+.link::after {
+  left: 0px;
+  bottom: -10px;
+}
+
+.link::before {
+  right: 0px;
+  top: -10px;
+}
+
 .link:hover {
   color: #24c5db;
 }
+
+.link:hover:after,
+.link:hover:before {
+  width: 100%;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -151,6 +193,7 @@ a {
   padding-right: 40px;
   padding-left: 40px;
 }
+
 .rs-logo {
   background-image: url(assets/svg/rs_school_js.svg);
   background-position: center;
