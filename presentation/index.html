@@ -8,7 +8,10 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +19,69 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+          <textarea data-template>
+            ## A history of CSS
+    
+              ```
+            h1 {
+                color: red;
+                font-size: 5em;
+            }
+            
+            p {
+                color: black;
+            }
+              ```
+            ---
+            ## Web page without CSS
+           
+            <img src="img/1.jpg" width="880" height="520" />
+            ---
+            ## Why do we need CSS?
+            ---
+            ## Using CSS allows a user to specify: 
+            <ul>
+              <li class="font">Fonts</li>
+              <li><span class="color">Colour of text</span> and <a class="color" href="#">links</a></li>
+              <li class="background">Use colours in the text’s background</li>
+              <li>Where and how boxes within the content look and are placed</li>
+              <li>CSS also improves user <b>accessibility</b>, <b>efficiency</b>, <b>flexibility</b> and <b>ensures browser compatibility</b></li>
+            </ul>
+            ---
+            ## Who invented CSS?
+            ---
+            ## The Arena web browser
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Arena_%28web_browser%29_screenshot.png">
+            ---
+            ## What is the difference between CSS1, CSS2 and CSS3?
+            <img src="img/carbon.png">
+
+            ---
+            ## Advantages of Cascading Style Sheet
+            <ul style="color: lightgreen">
+              <li>Web pages are easier to load and use less bandwidth</li>
+              <li>A CSS style sheet compliments well with HTML</li>
+              <li>Device Compatibility</li>
+              <li>Ability to Re-Position</li>
+              <li>Wider Design Variety</li>
+            </ul>
+            ---
+            ## Disadvantages of CSS
+            <ul style="color: red">
+              <li>Come in different levels</li>
+              <li>Fragmentation</li>
+              <li>Lack of security</li>
+            </ul>
+            ---
+            ## Finally, where would we be without CSS?
+            ---
+            <img src="https://media2.giphy.com/media/oncuBD9AtSUEg/giphy.gif?cid=ecf05e475usklozkjrpshpvavm12yxdtow4x49oexa110t11&rid=giphy.gif&ct=g">
+
+            Thanks for your attention!
+          </textarea>
+        </section>
+        
 			</div>
 		</div>
 
@@ -31,8 +95,8 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
+        slideNumber: 'c/t',
+        transition: 'convex',
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
